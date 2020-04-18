@@ -1,30 +1,31 @@
 import React from 'react';
-import { TILE_SIZE, HEAD_OFSET } from '../../settings/constants';
-import useHeroMoviment from '../../hooks/useHeroMoviment';
+
+import { TILE_SIZE, HEAD_OFFSET, EDirection } from '../../settings/constants';
 
 import './index.css';
+import useHeroMoviment from '../../hooks/useHeroMoviment';
 
 const initialPosition = {
   x: 15,
-  y: 15,
+  y: 15
 };
 
 const Hero = () => {
-  const moviment = useHeroMoviment(initialPosition);
+  const { position, direction } = useHeroMoviment(initialPosition);
 
   return (
     <div
       style={{
         position: 'absolute',
-        bottom: TILE_SIZE * moviment.position.x,
-        left: TILE_SIZE * moviment.position.y,
+        bottom: TILE_SIZE * position.y,
+        left: TILE_SIZE * position.x,
         width: TILE_SIZE,
-        height: TILE_SIZE + HEAD_OFSET,
+        height: TILE_SIZE + HEAD_OFFSET,
         backgroundImage: "url(./assets/HERO.png)",
         backgroundRepeat: 'no-repeat',
-        backgroundPosition: `0px -${TILE_SIZE - HEAD_OFSET}px`,
+        backgroundPosition: `0px -${TILE_SIZE - HEAD_OFFSET}px`,
         animation: 'hero-animation 1s steps(4) infinite',
-        transform: `scaleX(${moviment.direction === 'RIGHT' ? 1 : -1})`,
+        transform: `scaleX(${direction === EDirection.RIGHT ? 1 : -1})`,
         zIndex: 1
       }}
     />

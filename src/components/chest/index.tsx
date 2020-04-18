@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { TILE_SIZE, HEAD_OFSET } from '../../settings/constants';
+import { TILE_SIZE, HEAD_OFFSET } from '../../settings/constants';
 
 import './index.css';
 
