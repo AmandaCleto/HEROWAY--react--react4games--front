@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { TILE_SIZE, HEAD_OFFSET } from '../../settings/constants';
+import { TILE_SIZE } from '../../settings/constants';
 
 import './index.css';
 
@@ -9,8 +8,8 @@ const Trap = () => {
     <div
       style={{
         position: 'absolute',
-        bottom: TILE_SIZE * 8,
-        left: TILE_SIZE * 8,
+        top: TILE_SIZE * 12,
+        left: TILE_SIZE * 9,
         width: TILE_SIZE,
         height: 100,
         backgroundImage: "url(./assets/TRAP.png)",
