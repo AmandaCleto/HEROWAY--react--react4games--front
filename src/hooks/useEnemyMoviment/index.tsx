@@ -2,7 +2,6 @@
 import useInterval from '@use-it/interval';
 import React from 'react';
 import { EDirection, EWalker } from '../../settings/constants';
-import { handleNextPosition, checkValidMoviment } from '../../context/canvas/helpers'
 import { CanvasContext } from '../../context/canvas';
 
 function useEnemyMoviment(initialPosition) {
@@ -20,6 +19,12 @@ function useEnemyMoviment(initialPosition) {
     if (moviment.nextMove.valid) {
       updateDirectionState(randomDirection);
       updatePositionState(moviment.nextPosition);
+    }
+
+    //demons passaram em cima do heroi
+    if (moviment.nextMove.dead) {
+      alert("voce foi morto!");
+      window.location.reload();
     }
   }, 2000);
 

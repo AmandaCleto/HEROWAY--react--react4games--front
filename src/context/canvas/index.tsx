@@ -28,8 +28,6 @@ function CanvasProvider(props: IProps) {
 
                     newCanvas[nextPosition.y][nextPosition.x] = currentValue;
 
-                    console.log(newCanvas)
-
                     return {
                         canvas: newCanvas,
                         updateCanvas: prevState.updateCanvas,
@@ -37,7 +35,6 @@ function CanvasProvider(props: IProps) {
 
                 });
             }
-
 
             return {
                 nextPosition,

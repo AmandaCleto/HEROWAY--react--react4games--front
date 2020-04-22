@@ -10,18 +10,27 @@ export const ChestsContext = React.createContext({
         total: 0,
         position: []
     },
-    updateOpenedChests: () => null
+    updateOpenedChests: (position) => null
 })
 
 function ChestsProvider(props: IProps) {
     const [chestsState, updateChestsState] = React.useState({
-        totalChests: 2,
+        totalChests: 2, //tirar valor hardcode
         openedChests: {
             total: 0,
             position: []
         },        
-        updateOpenedChests: () => {
-            console.log("chests");
+        updateOpenedChests: (position) => {
+            updateChestsState((prevState) => {
+                return {
+                    totalChests: prevState.totalChests,
+                    openedChests: {
+                        total: prevState.openedChests.total + 1,
+                        position: prevState.openedChests.position.concat(position),
+                    },
+                    updateOpenedChests: prevState.updateOpenedChests,
+                };
+            })
         }
     });
 

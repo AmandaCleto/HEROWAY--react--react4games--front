@@ -1,3 +1,16 @@
+#HEROWAY REACT4GAME
+
+##Desafios deixados:
+
+- Criar contador de espaços  
+- Criar Demon com 4 espaços  
+- Criar Toggle Button para Debug  
+- Criar tipagem para no código  
+- Refatorar o código  
+- Opcional: Colocar audio  
+
+***
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
