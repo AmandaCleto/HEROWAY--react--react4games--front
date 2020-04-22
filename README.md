@@ -1,6 +1,6 @@
-#HEROWAY REACT4GAME
+# HEROWAY REACT4GAMES
 
-##Desafios deixados:
+## Desafios deixados:
 
 - Criar contador de espaços  
 - Criar Demon com 4 espaços  
