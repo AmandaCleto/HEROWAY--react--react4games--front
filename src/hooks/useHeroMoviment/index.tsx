@@ -1,12 +1,18 @@
 import useEventListener from '@use-it/event-listener';
 import React from 'react';
-import { EDirection } from '../../settings/constants';
-import { handleNextPosition, checkValidMoviment } from '../../context/canvas/helpers';
+import { EDirection, EWalker } from '../../settings/constants';
+
+import { CanvasContext } from '../../context/canvas';
+import { ChestsContext } from '../../context/chest';
+
 
 function useHeroMoviment(initialPosition) {
+  const canvasContext = React.useContext(CanvasContext);
+  const chestsContext = React.useContext(ChestsContext);
+
   const [positionState, updatePositionState] = React.useState(initialPosition);
   const [direction, updateDirectionState] = React.useState(EDirection.RIGHT);
-
+  
   useEventListener('keydown', (event: React.KeyboardEvent<HTMLDivElement>) => {
     const direction = event.key as EDirection;
 
@@ -14,13 +20,21 @@ function useHeroMoviment(initialPosition) {
       return;
     }
 
-    const nextPosition = handleNextPosition(direction, positionState);
-    const isValidMoviment = checkValidMoviment(nextPosition);
+    const { nextMove, nextPosition } = canvasContext.updateCanvas(direction, positionState, EWalker.HERO);
 
-    if (isValidMoviment) {
+    if (nextMove.valid) {
       updatePositionState(nextPosition);
       updateDirectionState(direction);
     }
+
+    if (nextMove.dead) {
+      alert("morreu!")
+    }
+
+    if(nextMove.chest) {
+      chestsContext.updateOpenedChests();
+    }
+
   });
 
   return {
