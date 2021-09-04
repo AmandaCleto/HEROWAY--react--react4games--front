@@ -25,14 +25,14 @@ See the result: [<ins>GithubPages: React4Games</ins>](https://amandacleto.github
 <br>
 
 
-## Left Challenges:
+## Challenges left behind:
 
-- Create space counter
-- Create Demon with 4 spaces
-- Create toggle button to debug
-- Create typing for in code
-- Refactor the code
-- Optional: audio Put
+- Create space counter;
+- Create Demon with 4 spaces;
+- Create toggle button to debug;
+- Create typing for in code;
+- Refactor the code;
+- Audio Put.
 
 <br>
 
