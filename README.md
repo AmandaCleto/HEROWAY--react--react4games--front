@@ -11,9 +11,16 @@ To know more about Heroway, follow the link: [<ins>https://heroway.com.br</ins>]
 
 <br>
 
+![](https://amandacleto.github.io/images-for-projects/public/images/github-readme/heroway-react4games.png)
+
 ## 💡 Idea:
 A whole game using React and Typescript.  
 The intended of this project was to **learn about the usage of Typescript with React** and topics as: **context, hooks and components** in a deeper level.
+
+
+## 🌐 Links:
+See the result: [<ins>GithubPages: React4Games</ins>](https://amandacleto.github.io/HEROWAY--react--react4games--front/).
+
 
 <br>
 
